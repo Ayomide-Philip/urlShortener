@@ -19,6 +19,14 @@ export default function App() {
     e.preventDefault();
     getShortenUrl();
   }
+  async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      alert("Text Copied!!!!");
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-[#232526] via-[#414345] to-[#232526]">
       <div className="container mx-auto max-w-xl p-8">
@@ -76,6 +84,9 @@ export default function App() {
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-r-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 style={{ marginLeft: "-1px" }}
                 type="button"
+                onClick={() => {
+                  copyToClipboard(shortUrl);
+                }}
               >
                 📋 Copy
               </button>
