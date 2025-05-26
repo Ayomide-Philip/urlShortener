@@ -1,9 +1,22 @@
 import { useState } from "react";
+import axios from "axios";
 export default function App() {
   const [url, setUrl] = useState("");
+
+  async function getShortenUrl() {
+    try {
+      const response = await axios.post(`https://cleanuri.com/api/v1/shorten`, {
+        url: url,
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(url);
+    getShortenUrl();
   }
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-[#232526] via-[#414345] to-[#232526]">
