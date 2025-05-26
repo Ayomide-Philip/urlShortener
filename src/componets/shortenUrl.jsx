@@ -8,7 +8,7 @@ export default function ShortenURL({ shortUrl, copyToClipboard }) {
           name="short-url"
           className="w-full px-5 py-3 border border-gray-700 bg-gray-900 text-green-400 font-mono rounded-l-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 placeholder:text-gray-500"
           placeholder="Your short url will appear here"
-          value={shortUrl ? shortUrl : null}
+          value={shortUrl ? shortUrl : undefined}
           readOnly
         />
         <button
