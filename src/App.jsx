@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import ShortenURL from "./componets/shortenUrl";
+import UrlForm from "./componets/form";
 export default function App() {
   const [url, setUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
@@ -43,7 +44,9 @@ export default function App() {
             Url Shortener
           </h1>
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <UrlForm handleSubmit={handleSubmit} setUrl={setUrl} />
+
+          {/* <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="url"
@@ -72,7 +75,7 @@ export default function App() {
                 Generate Short Url
               </button>
             </div>
-          </form>
+          </form> */}
 
           <ShortenURL shortUrl={shortUrl} copyToClipboard={copyToClipboard} />
         </div>
