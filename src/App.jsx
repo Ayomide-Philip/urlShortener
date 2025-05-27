@@ -37,7 +37,7 @@ export default function App() {
   }
   return (
     <Container>
-      <URLHeading />
+      <URLHeading /> 
       <UrlForm handleSubmit={handleSubmit} setUrl={setUrl} />
       <ShortenURL shortUrl={shortUrl} copyToClipboard={copyToClipboard} />
     </Container>
